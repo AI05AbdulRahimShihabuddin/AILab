@@ -1,0 +1,12 @@
+
+#Trial 1:
+[3.7,4.9,5.2,3.3]
+
+
+#Trial 2
+[3.3,3.8,5.4,5.2]
+ 
+
+Both Trail 1 and Trail 2 predicted the species as 'virginica'
+Even though the values of features differ by much, the model classified both trials into 
+the class 'virginica'.
