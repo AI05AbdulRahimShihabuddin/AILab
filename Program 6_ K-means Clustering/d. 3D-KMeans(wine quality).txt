@@ -1,0 +1,32 @@
+#2. Performing Kmeans clustering on another dataset-wine dataset
+#1.Dataset(Pandas)
+ 
+import pandas as pd
+wine=pd.read_csv("/content/Wine.csv")
+x=wine[["Alcohol","Malic_Acid","Ash"]]
+ 
+#2 Load K means & Fit Data
+ 
+from sklearn.cluster import KMeans
+ML=KMeans(n_clusters=3,max_iter=4)
+ML=ML.fit(x)
+ 
+#3. Centers & Labels
+centers=ML.cluster_centers_
+labels=ML.labels_
+print(centers)
+print(labels)
+ 
+#4. Plotting graph
+ 
+import matplotlib.pyplot as plt
+
+# 4. Graph plotting
+import matplotlib.pyplot as plt
+ax = plt.axes(projection='3d')
+
+plt.xlabel("Alcohol")
+plt.ylabel("Malic Acid")
+
+plt.title("3D - KMeans Clustering (Wine Quality - White)")
+ax.scatter(xs=wine[["Alcohol"]],ys=wine[["Malic_Acid"]],zs=wine[["Ash"]],c=labels,cmap="rainbow")
